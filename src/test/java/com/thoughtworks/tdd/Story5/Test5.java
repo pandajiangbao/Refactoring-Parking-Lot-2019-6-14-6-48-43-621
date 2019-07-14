@@ -1,5 +1,4 @@
-package com.thoughtworks.tdd.Story4;
-
+package com.thoughtworks.tdd.Story5;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Test4 {
+public class Test5 {
 
     @Test
     public void should_return_ticket_when_park_a_car() {
@@ -234,5 +233,21 @@ public class Test4 {
         Assertions.assertEquals(new Integer(3),ticket.getParkingLotId());
     }
 
+    @Test
+    public void should_choose_usage_min_parking_lot_when_park_the_car() {
+        //given
+        ParkingLot parkingLot1 = new ParkingLot(1,5);
+        ParkingLot parkingLot2 = new ParkingLot(2,3);
+        List<ParkingLot> parkingLots = new ArrayList<>(Arrays.asList(parkingLot1,parkingLot2));
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(parkingLots); //super 管理2个停车场
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot1); //普通男孩管理1
 
+        //when
+        Ticket ticket1 = parkingBoy.parking(new Car(1));
+
+        Ticket ticket2 = superSmartParkingBoy.parking(new Car(2));
+        //then
+        Assertions.assertEquals(new Integer(1),ticket1.getParkingLotId());
+        Assertions.assertEquals(new Integer(2),ticket2.getParkingLotId());
+    }
 }
