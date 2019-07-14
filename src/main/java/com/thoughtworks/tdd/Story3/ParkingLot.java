@@ -3,13 +3,21 @@ package com.thoughtworks.tdd.Story3;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParkingLot {
 
 
+    private Integer parkingLotId;
     private List<Car> carList;
     private int max=10;
-
     public ParkingLot() {
+        carList = new ArrayList<>();
+    }
+
+    public ParkingLot(Integer parkingLotId) {
+        this.parkingLotId = parkingLotId;
         carList = new ArrayList<>();
     }
 
@@ -17,7 +25,8 @@ public class ParkingLot {
         return carList;
     }
 
-    public ParkingLot(int max) {
+    public ParkingLot(Integer parkingLotId, int max) {
+        this.parkingLotId = parkingLotId;
         this.max = max;
         this.carList = new ArrayList<>();
     }
@@ -32,7 +41,9 @@ public class ParkingLot {
             return null;
         }
         this.carList.add(car);
-        return new Ticket(car.getCarId());
+        Ticket ticket = new Ticket(car.getCarId());
+        ticket.setParkingLotId(this.parkingLotId);
+        return ticket;
     }
 
     public Car getCar(Integer carId) {
@@ -46,4 +57,12 @@ public class ParkingLot {
         }
         return null;
     }
+    public Integer getParkingLotId() {
+        return parkingLotId;
+    }
+
+    public void setParkingLotId(Integer parkingLotId) {
+        this.parkingLotId = parkingLotId;
+    }
+
 }
