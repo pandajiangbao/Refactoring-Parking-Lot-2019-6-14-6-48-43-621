@@ -1,11 +1,13 @@
-package com.thoughtworks.tdd.Story2;
+package com.thoughtworks.tdd.Story3;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class Test2 {
+public class Test3 {
 
     @Test
     public void should_return_ticket_when_park_a_car() {
@@ -192,5 +194,19 @@ public class Test2 {
         //then
         Assertions.assertEquals("Not enough position.",parkingBoy.getErrorMsg());
     }
+    @Test
+    public void should_park_the_next_parking_lot_when_parking_lot_one_is_full_of_car() {
+        //given
+        List<ParkingLot> parkingLots = new ArrayList<>(Arrays.asList(new ParkingLot(1),new ParkingLot(2)));
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLots);
+        for(int i=1;i<=10;i++){
+            parkingBoy.parking(new Car(i));
+        }
+        Car car11 = new Car(11);
 
+        //when
+        Ticket ticket = parkingBoy.parking(car11);
+        //then
+        Assertions.assertEquals(new Integer(2),ticket.getParkingLotId());
+    }
 }
