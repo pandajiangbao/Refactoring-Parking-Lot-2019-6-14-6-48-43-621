@@ -3,20 +3,20 @@ package com.thoughtworks.tdd.Story6;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceManager extends ParkingBoy {
+public class Manager extends ParkingBoy {
 
     private List<ParkingBoy> parkingBoys = new ArrayList<>();
 
-    public ServiceManager(Integer parkingBoyId,List<ParkingBoy> parkingBoys) {
+    public Manager(Integer parkingBoyId, List<ParkingBoy> parkingBoys) {
         this.parkingBoys = parkingBoys;
     }
 
-    public ServiceManager(Integer parkingBoyId,ParkingLot parkingLot, List<ParkingBoy> parkingBoys) {
+    public Manager(Integer parkingBoyId, ParkingLot parkingLot, List<ParkingBoy> parkingBoys) {
         super(parkingBoyId,parkingLot);
         this.parkingBoys = parkingBoys;
     }
 
-    public ServiceManager(Integer parkingBoyId ,List<ParkingLot> parkingLots, List<ParkingBoy> parkingBoys) {
+    public Manager(Integer parkingBoyId , List<ParkingLot> parkingLots, List<ParkingBoy> parkingBoys) {
         super(parkingBoyId,parkingLots);
         this.parkingBoys = parkingBoys;
     }

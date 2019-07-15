@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Test6 {
@@ -12,7 +11,7 @@ public class Test6 {
     public void should_return_ticket_when_manager_store_car_in_his_own_parking_lot() {
         //given
         ParkingLot parkingLot = new ParkingLot(1,5);
-        ServiceManager serviceManager = new ServiceManager(1,parkingLot,null);//没手下
+        Manager serviceManager = new Manager(1,parkingLot,null);//没手下
         Car car = new Car(1);
 
         //when
@@ -27,7 +26,7 @@ public class Test6 {
     public void should_return_car_when_manager_fetch_car_in_his_own_parking_lot() {
         //given
         ParkingLot parkingLot = new ParkingLot(1,5);
-        ServiceManager serviceManager = new ServiceManager(1,parkingLot,null);//没手下
+        Manager serviceManager = new Manager(1,parkingLot,null);//没手下
         Car car = new Car(1);
         //when
         Ticket ticket = serviceManager.parking(car);
@@ -45,7 +44,7 @@ public class Test6 {
 
         List<ParkingBoy> parkingBoys = new ArrayList<>();
         parkingBoys.add(parkingBoy);
-        ServiceManager serviceManager = new ServiceManager(1,(ParkingLot) null,parkingBoys);//管理着parkingBoy
+        Manager serviceManager = new Manager(1,(ParkingLot) null,parkingBoys);//管理着parkingBoy
 
         //when
         Ticket ticket = serviceManager.parking(1,new Car(1));//让id为1的boy去停车
@@ -62,7 +61,7 @@ public class Test6 {
 
         List<ParkingBoy> parkingBoys = new ArrayList<>();
         parkingBoys.add(parkingBoy);
-        ServiceManager serviceManager = new ServiceManager(1,parkingLot,parkingBoys);//管理着parkingBoy
+        Manager serviceManager = new Manager(1,parkingLot,parkingBoys);//管理着parkingBoy
         Car car = new Car(1);
         //when
         Ticket ticket = serviceManager.parking(car);
@@ -80,7 +79,7 @@ public class Test6 {
 
         List<ParkingBoy> parkingBoys = new ArrayList<>();
         parkingBoys.add(parkingBoy);
-        ServiceManager serviceManager = new ServiceManager(1,(ParkingLot) null,parkingBoys);//管理着parkingBoy
+        Manager serviceManager = new Manager(1,(ParkingLot) null,parkingBoys);//管理着parkingBoy
 
         //when
         Ticket ticket = serviceManager.parking(1,new Car(1));//让id为1的boy去停车
@@ -97,7 +96,7 @@ public class Test6 {
 
         List<ParkingBoy> parkingBoys = new ArrayList<>();
         parkingBoys.add(parkingBoy);
-        ServiceManager serviceManager = new ServiceManager(1,parkingLot,parkingBoys);//管理着parkingBoy
+        Manager serviceManager = new Manager(1,parkingLot,parkingBoys);//管理着parkingBoy
         Car car = new Car(1);
         //when
         serviceManager.parking(car);
