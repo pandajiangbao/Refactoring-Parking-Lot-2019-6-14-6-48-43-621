@@ -3,13 +3,6 @@ package com.thoughtworks.tdd.Story6;
 import java.util.List;
 
 public class SuperSmartParkingBoy extends ParkingBoy {
-    public SuperSmartParkingBoy(Integer parkingBoyId ,ParkingLot parkingLot) {
-        super(parkingBoyId,parkingLot);
-    }
-
-    public SuperSmartParkingBoy(Integer parkingBoyId ,List<ParkingLot> parkingLots) {
-        super(parkingBoyId,parkingLots);
-    }
 
     @Override
     public Ticket parking(Car car) {
