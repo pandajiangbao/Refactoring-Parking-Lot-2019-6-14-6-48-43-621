@@ -11,7 +11,7 @@ public class Test6 {
     public void should_return_ticket_when_manager_store_car_in_his_own_parking_lot() {
         //given
         ParkingLot parkingLot = new ParkingLot(1,5);
-        Manager serviceManager = new Manager(1,parkingLot,null);//没手下
+        Manager serviceManager = new Manager(1,parkingLot,null);
         Car car = new Car(1);
 
         //when
