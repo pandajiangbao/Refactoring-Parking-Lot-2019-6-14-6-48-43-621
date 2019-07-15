@@ -24,7 +24,7 @@ public class ParkingBoy {
         if(car.getCarId()==null) return null;
         return parkingLot.park(car);
     }
-    public Car redeemCar(Ticket ticket){
+    public Car returnCar(Ticket ticket){
         if(ticket==null||(!ticket.getValidity())) return null;
         return parkingLot.getCar(ticket.getCarId());
     }

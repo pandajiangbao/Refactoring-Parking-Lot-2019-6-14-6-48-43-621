@@ -1,10 +1,11 @@
-package com.thoughtworks.tdd.Story5;
+package com.thoughtworks.tdd.Story6;
 
 public class Ticket {
     private Integer carId;
     private Integer parkingLotId;
     private boolean isValidity;
     private String remark;
+    private Integer operatorId;
 
     public Ticket(){
         this.isValidity = true;
@@ -44,5 +45,13 @@ public class Ticket {
 
     public void setParkingLotId(Integer parkingLotId) {
         this.parkingLotId = parkingLotId;
+    }
+
+    public Integer getOperatorId() {
+        return operatorId;
+    }
+
+    public void setOperatorId(Integer operatorId) {
+        this.operatorId = operatorId;
     }
 }

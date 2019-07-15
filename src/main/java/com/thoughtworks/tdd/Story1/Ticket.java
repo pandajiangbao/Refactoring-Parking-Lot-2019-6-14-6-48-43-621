@@ -2,14 +2,14 @@ package com.thoughtworks.tdd.Story1;
 
 public class Ticket {
     private Integer carId;
-    private boolean validity;//true 为 有效，false 为无效（已使用）
+    private boolean isValidity;
 
     public Ticket(){
-        this.validity = true;
+        this.isValidity = true;
     }
     public Ticket(Integer carId) {
         this.carId = carId;
-        this.validity = true;
+        this.isValidity = true;
     }
 
     public Integer getCarId() {
@@ -21,7 +21,7 @@ public class Ticket {
     }
 
     public boolean getValidity() {
-        return validity;
+        return isValidity;
     }
 
     public void setValidity(boolean validity) {

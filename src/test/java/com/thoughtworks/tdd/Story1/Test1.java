@@ -28,7 +28,7 @@ public class Test1 {
 
         //when
         Ticket ticket = parkingBoy.parking(new Car(1));
-        Car car = parkingBoy.redeemCar(ticket);
+        Car car = parkingBoy.returnCar(ticket);
 
         //then
         Assertions.assertNotNull(car);
@@ -59,7 +59,7 @@ public class Test1 {
 
         //when
         Ticket ticket = parkingBoy.parking(car1);
-        Car car = parkingBoy.redeemCar(ticket);
+        Car car = parkingBoy.returnCar(ticket);
 
         //then
         Assertions.assertEquals(car1,car);
@@ -74,7 +74,7 @@ public class Test1 {
 
         //when
         Ticket ticket = parkingBoy.parking(car1);
-        Car car = parkingBoy.redeemCar(null);
+        Car car = parkingBoy.returnCar(null);
 
         //then
         Assertions.assertNull(car);
@@ -90,7 +90,7 @@ public class Test1 {
 
         //when
         Ticket ticket1 = parkingBoy.parking(car1);
-        Car car = parkingBoy.redeemCar(ticket);
+        Car car = parkingBoy.returnCar(ticket);
 
         //then
         Assertions.assertNull(car);
@@ -105,8 +105,8 @@ public class Test1 {
 
         //when
         Ticket ticket = parkingBoy.parking(car1);
-        Car car = parkingBoy.redeemCar(ticket);
-        Car car2 = parkingBoy.redeemCar(ticket);
+        Car car = parkingBoy.returnCar(ticket);
+        Car car2 = parkingBoy.returnCar(ticket);
 
         //then
         Assertions.assertNull(car2);

@@ -3,15 +3,15 @@ package com.thoughtworks.tdd.Story3;
 public class Ticket {
     private Integer carId;
     private Integer parkingLotId;
-    private boolean validity;//true 为 有效，false 为无效（已使用）
+    private boolean isValidity;
     private String remark;
 
     public Ticket(){
-        this.validity = true;
+        this.isValidity = true;
     }
     public Ticket(Integer carId) {
         this.carId = carId;
-        this.validity = true;
+        this.isValidity = true;
     }
 
     public Integer getCarId() {
@@ -23,11 +23,11 @@ public class Ticket {
     }
 
     public boolean getValidity() {
-        return validity;
+        return isValidity;
     }
 
     public void setValidity(boolean validity) {
-        this.validity = validity;
+        this.isValidity = validity;
     }
 
     public String getRemark() {
