@@ -57,30 +57,30 @@ public class Test5 {
     @Test
     public void should_return_correct_car_when_submit_a_ticket() {
         //given
-        Car audi = new Car(100);
-        Car maserati = new Car(200);
+        Car car = new Car(100);
+        Car car1 = new Car(200);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-        Ticket audiTicket=parkingBoy.parking(audi);
-        Ticket maseratiTicket = parkingBoy.parking(maserati);
-        Car car = parkingBoy.redeemCar(maseratiTicket);
+        Ticket audiTicket=parkingBoy.parking(car);
+        Ticket car1Ticket = parkingBoy.parking(car1);
+        Car car2 = parkingBoy.redeemCar(car1Ticket);
 
         //then
-        Assertions.assertEquals(maserati,car);
+        Assertions.assertEquals(car1,car2);
     }
 
 
     @Test
     public void should_return_null_when_do_not_submit_ticket() {
         //given
-        Car maserati = new Car(200);
+        Car car1 = new Car(200);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-        Ticket maseratiTicket = parkingBoy.parking(maserati);
+        Ticket car1Ticket = parkingBoy.parking(car1);
         Car car = parkingBoy.redeemCar(null);
 
         //then
@@ -91,14 +91,14 @@ public class Test5 {
     @Test
     public void should_return_null_when_submit_error_ticket() {
         //given
-        Car maserati = new Car(200);
+        Car car1 = new Car(200);
         Ticket ticket = new Ticket(23);
         ticket.setParkingLotId(1);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-        Ticket maseratiTicket = parkingBoy.parking(maserati);
+        Ticket car1Ticket = parkingBoy.parking(car1);
         Car car = parkingBoy.redeemCar(ticket);
 
         //then
@@ -109,14 +109,14 @@ public class Test5 {
     @Test
     public void should_return_null_when_ticket_is_invalidity() {
         //given
-        Car maserati = new Car(200);
+        Car car1 = new Car(200);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-        Ticket maseratiTicket = parkingBoy.parking(maserati);
-        Car car = parkingBoy.redeemCar(maseratiTicket);
-        Car car2 = parkingBoy.redeemCar(maseratiTicket);
+        Ticket car1Ticket = parkingBoy.parking(car1);
+        Car car = parkingBoy.redeemCar(car1Ticket);
+        Car car2 = parkingBoy.redeemCar(car1Ticket);
 
         //then
         Assertions.assertNull(car2);
@@ -143,14 +143,14 @@ public class Test5 {
     @Test
     public void should_get_error_msg_when_ticket_is_invalidity() {
         //given
-//        Car maserati = new Car(200);
+//        Car car1 = new Car(200);
         Ticket ticket = new Ticket(1);
         ticket.setValid(false);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-//        Ticket maseratiTicket = parkingBoy.parking(maserati);
+//        Ticket car1Ticket = parkingBoy.parking(car1);
         parkingBoy.redeemCar(ticket);
 
         //then
@@ -161,14 +161,14 @@ public class Test5 {
     @Test
     public void should_get_error_msg_when_ticket_is_not_provide() {
         //given
-        Car maserati = new Car(200);
+        Car car1 = new Car(200);
         Ticket ticket = new Ticket(1);
         ticket.setParkingLotId(1);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-        Ticket maseratiTicket = parkingBoy.parking(maserati);
+        Ticket car1Ticket = parkingBoy.parking(car1);
         parkingBoy.redeemCar(ticket);
 
         //then
