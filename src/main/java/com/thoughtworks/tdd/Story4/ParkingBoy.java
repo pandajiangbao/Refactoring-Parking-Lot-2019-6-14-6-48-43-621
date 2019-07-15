@@ -45,7 +45,7 @@ public class ParkingBoy {
             this.errorMsg="Please provide your parking ticket.";
             return null;
         }
-        if(!ticket.getValidity()){
+        if(!ticket.getValid()){
             this.errorMsg="Unrecognized parking ticket.";
             return null;
         }

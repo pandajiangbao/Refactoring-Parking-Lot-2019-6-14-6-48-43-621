@@ -7,13 +7,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class Test3 {
     @Test
     public void should_return_ticket_when_park_a_car() {
@@ -144,7 +137,7 @@ public class Test3 {
         //given
 //        Car maserati = new Car(200);
         Ticket ticket = new Ticket(1);
-        ticket.setValidity(false);
+        ticket.setValid(false);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 

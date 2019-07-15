@@ -5,10 +5,6 @@ import java.util.List;
 
 import java.util.Objects;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 public class ParkingBoy {
 
     private Integer parkingBoyId;
@@ -59,7 +55,7 @@ public class ParkingBoy {
             this.errorMsg="Please provide your parking ticket.";
             return null;
         }
-        if(!ticket.getValidity()){
+        if(!ticket.getValid()){
             this.errorMsg="Unrecognized parking ticket.";
             return null;
         }

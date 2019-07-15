@@ -2,14 +2,14 @@ package com.thoughtworks.tdd.Story2;
 
 public class Ticket {
     private Integer carId;
-    private boolean isValidity;
+    private boolean isValid;
 
     public Ticket(){
-        this.isValidity = true;
+        this.isValid = true;
     }
     public Ticket(Integer carId) {
         this.carId = carId;
-        this.isValidity = true;
+        this.isValid = true;
     }
 
     public Integer getCarId() {
@@ -20,11 +20,11 @@ public class Ticket {
         this.carId = carId;
     }
 
-    public boolean getValidity() {
-        return isValidity;
+    public boolean getValid() {
+        return isValid;
     }
 
-    public void setValidity(boolean isValidity) {
-        this.isValidity= isValidity;
+    public void setValid(boolean isValidity) {
+        this.isValid = isValidity;
     }
 }

@@ -146,7 +146,7 @@ public class Test4 {
         //given
 //        Car maserati = new Car(200);
         Ticket ticket = new Ticket(1);
-        ticket.setValidity(false);
+        ticket.setValid(false);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 

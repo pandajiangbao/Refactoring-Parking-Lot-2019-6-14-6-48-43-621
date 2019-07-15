@@ -26,7 +26,7 @@ public class Test6 {
     public void should_return_car_when_manager_fetch_car_in_his_own_parking_lot() {
         //given
         ParkingLot parkingLot = new ParkingLot(1,5);
-        Manager serviceManager = new Manager(1,parkingLot,null);//没手下
+        Manager serviceManager = new Manager(1,parkingLot,null);
         Car car = new Car(1);
         //when
         Ticket ticket = serviceManager.parking(car);
@@ -44,13 +44,13 @@ public class Test6 {
 
         List<ParkingBoy> parkingBoys = new ArrayList<>();
         parkingBoys.add(parkingBoy);
-        Manager serviceManager = new Manager(1,(ParkingLot) null,parkingBoys);//管理着parkingBoy
+        Manager serviceManager = new Manager(1,(ParkingLot) null,parkingBoys);
 
         //when
-        Ticket ticket = serviceManager.parking(1,new Car(1));//让id为1的boy去停车
+        Ticket ticket = serviceManager.parking(1,new Car(1));
         //then
 
-        Assertions.assertEquals(new Integer(1),ticket.getOperatorId()); //停车人的id与预期相符
+        Assertions.assertEquals(new Integer(1),ticket.getOperatorId());
     }
 
     @Test
@@ -61,14 +61,14 @@ public class Test6 {
 
         List<ParkingBoy> parkingBoys = new ArrayList<>();
         parkingBoys.add(parkingBoy);
-        Manager serviceManager = new Manager(1,parkingLot,parkingBoys);//管理着parkingBoy
+        Manager serviceManager = new Manager(1,parkingLot,parkingBoys);
         Car car = new Car(1);
         //when
         Ticket ticket = serviceManager.parking(car);
-        Car newCar = (Car) serviceManager.redeemCar(1,ticket);//让id为1的boy去取车
+        Car newCar = (Car) serviceManager.redeemCar(1,ticket);
         //then
 
-        Assertions.assertEquals(car,newCar); //取到之前停的车
+        Assertions.assertEquals(car,newCar);
     }
 
     @Test
@@ -79,10 +79,10 @@ public class Test6 {
 
         List<ParkingBoy> parkingBoys = new ArrayList<>();
         parkingBoys.add(parkingBoy);
-        Manager serviceManager = new Manager(1,(ParkingLot) null,parkingBoys);//管理着parkingBoy
+        Manager serviceManager = new Manager(1,(ParkingLot) null,parkingBoys);
 
         //when
-        Ticket ticket = serviceManager.parking(1,new Car(1));//让id为1的boy去停车
+        Ticket ticket = serviceManager.parking(1,new Car(1));
         //then
 
         Assertions.assertEquals("Not enough position.",serviceManager.getErrorMsg());
@@ -96,16 +96,16 @@ public class Test6 {
 
         List<ParkingBoy> parkingBoys = new ArrayList<>();
         parkingBoys.add(parkingBoy);
-        Manager serviceManager = new Manager(1,parkingLot,parkingBoys);//管理着parkingBoy
+        Manager serviceManager = new Manager(1,parkingLot,parkingBoys);
         Car car = new Car(1);
         //when
         serviceManager.parking(car);
         Ticket ticket = new Ticket(2);
         ticket.setParkingLotId(1);
-        Car newCar = (Car) serviceManager.redeemCar(1,ticket);//让1号boy去取2车，错误的票
+        Car newCar = (Car) serviceManager.redeemCar(1,ticket);
         //then
 
-        Assertions.assertEquals("Unrecognized parking ticket.",serviceManager.getErrorMsg()); //取到之前停的车
+        Assertions.assertEquals("Unrecognized parking ticket.",serviceManager.getErrorMsg());
     }
 
 

@@ -3,15 +3,15 @@ package com.thoughtworks.tdd.Story5;
 public class Ticket {
     private Integer carId;
     private Integer parkingLotId;
-    private boolean isValidity;
+    private boolean isValid;
     private String remark;
 
     public Ticket(){
-        this.isValidity = true;
+        this.isValid = true;
     }
     public Ticket(Integer carId) {
         this.carId = carId;
-        this.isValidity = true;
+        this.isValid = true;
     }
 
     public Integer getCarId() {
@@ -22,12 +22,12 @@ public class Ticket {
         this.carId = carId;
     }
 
-    public boolean getValidity() {
-        return isValidity;
+    public boolean getValid() {
+        return isValid;
     }
 
-    public void setValidity(boolean validity) {
-        this.isValidity = validity;
+    public void setValid(boolean valid) {
+        this.isValid = valid;
     }
 
     public String getRemark() {

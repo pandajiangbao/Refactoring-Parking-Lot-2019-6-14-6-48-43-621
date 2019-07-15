@@ -145,7 +145,7 @@ public class Test5 {
         //given
 //        Car maserati = new Car(200);
         Ticket ticket = new Ticket(1);
-        ticket.setValidity(false);
+        ticket.setValid(false);
         ParkingLot parkingLot = new ParkingLot(1);
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
@@ -239,8 +239,8 @@ public class Test5 {
         ParkingLot parkingLot1 = new ParkingLot(1,5);
         ParkingLot parkingLot2 = new ParkingLot(2,3);
         List<ParkingLot> parkingLots = new ArrayList<>(Arrays.asList(parkingLot1,parkingLot2));
-        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(parkingLots); //super 管理2个停车场
-        ParkingBoy parkingBoy = new ParkingBoy(parkingLot1); //普通男孩管理1
+        SuperSmartParkingBoy superSmartParkingBoy = new SuperSmartParkingBoy(parkingLots);
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot1);
 
         //when
         Ticket ticket1 = parkingBoy.parking(new Car(1));
