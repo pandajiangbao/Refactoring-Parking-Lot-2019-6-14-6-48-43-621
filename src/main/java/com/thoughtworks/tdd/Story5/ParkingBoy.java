@@ -31,14 +31,14 @@ public class ParkingBoy {
         Ticket ticket = null;
         for(int i=0;i<parkingLots.size();i++){
             ticket = parkingLots.get(i).park(car);
-            if(ticket !=null) break;;
+            if(ticket !=null) break;
         }
         if(ticket == null){
             this.errorMsg = "Not enough position.";
         }
         return ticket;
     }
-    public Car redeemCar(Ticket ticket){
+    public Car fetchCar(Ticket ticket){
 
         System.out.println(ticket);
         if(ticket == null) {

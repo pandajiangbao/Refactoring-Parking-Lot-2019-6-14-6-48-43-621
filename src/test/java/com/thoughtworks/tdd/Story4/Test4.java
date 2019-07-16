@@ -31,7 +31,7 @@ public class Test4 {
 
         //when
         Ticket ticket = parkingBoy.parking(new Car(1));
-        Car car = parkingBoy.redeemCar(ticket);
+        Car car = parkingBoy.fetchCar(ticket);
 
         //then
         Assertions.assertNotNull(car);
@@ -66,7 +66,7 @@ public class Test4 {
         //when
         Ticket audiTicket=parkingBoy.parking(audi);
         Ticket car1Ticket = parkingBoy.parking(car1);
-        Car car = parkingBoy.redeemCar(car1Ticket);
+        Car car = parkingBoy.fetchCar(car1Ticket);
 
         //then
         Assertions.assertEquals(car1,car);
@@ -82,7 +82,7 @@ public class Test4 {
 
         //when
         Ticket car1Ticket = parkingBoy.parking(car1);
-        Car car = parkingBoy.redeemCar(null);
+        Car car = parkingBoy.fetchCar(null);
 
         //then
         Assertions.assertNull(car);
@@ -100,7 +100,7 @@ public class Test4 {
 
         //when
         Ticket car1Ticket = parkingBoy.parking(car1);
-        Car car = parkingBoy.redeemCar(ticket);
+        Car car = parkingBoy.fetchCar(ticket);
 
         //then
         Assertions.assertNull(car);
@@ -116,8 +116,8 @@ public class Test4 {
 
         //when
         Ticket car1Ticket = parkingBoy.parking(car1);
-        Car car = parkingBoy.redeemCar(car1Ticket);
-        Car car2 = parkingBoy.redeemCar(car1Ticket);
+        Car car = parkingBoy.fetchCar(car1Ticket);
+        Car car2 = parkingBoy.fetchCar(car1Ticket);
 
         //then
         Assertions.assertNull(car2);
@@ -152,7 +152,7 @@ public class Test4 {
 
         //when
 //        Ticket car1Ticket = parkingBoy.parking(car1);
-        parkingBoy.redeemCar(ticket);
+        parkingBoy.fetchCar(ticket);
 
         //then
         Assertions.assertEquals("Unrecognized parking ticket.",parkingBoy.getErrorMsg());
@@ -170,7 +170,7 @@ public class Test4 {
 
         //when
         Ticket car1Ticket = parkingBoy.parking(car1);
-        parkingBoy.redeemCar(ticket);
+        parkingBoy.fetchCar(ticket);
 
         //then
         Assertions.assertEquals("Unrecognized parking ticket.",parkingBoy.getErrorMsg());
@@ -184,7 +184,7 @@ public class Test4 {
         ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
 
         //when
-        parkingBoy.redeemCar(null);
+        parkingBoy.fetchCar(null);
 
         //then
         Assertions.assertEquals("Please provide your parking ticket.",parkingBoy.getErrorMsg());

@@ -30,7 +30,7 @@ public class Test6 {
         Car car = new Car(1);
         //when
         Ticket ticket = serviceManager.parking(car);
-        Car newCar = serviceManager.redeemCar(ticket);
+        Car newCar = serviceManager.fetchCar(ticket);
         //then
 
         Assertions.assertEquals(car,newCar);
@@ -65,7 +65,7 @@ public class Test6 {
         Car car = new Car(1);
         //when
         Ticket ticket = serviceManager.parking(car);
-        Car newCar = (Car) serviceManager.redeemCar(1,ticket);
+        Car newCar = (Car) serviceManager.fetchCar(1,ticket);
         //then
 
         Assertions.assertEquals(car,newCar);
@@ -102,7 +102,7 @@ public class Test6 {
         serviceManager.parking(car);
         Ticket ticket = new Ticket(2);
         ticket.setParkingLotId(1);
-        Car newCar = (Car) serviceManager.redeemCar(1,ticket);
+        Car newCar = (Car) serviceManager.fetchCar(1,ticket);
         //then
 
         Assertions.assertEquals("Unrecognized parking ticket.",serviceManager.getErrorMsg());
